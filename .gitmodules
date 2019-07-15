@@ -1,7 +1,3 @@
 [submodule "themes/bilberry-hugo-theme"]
 	path = themes/bilberry-hugo-theme
 	url = https://github.com/taskmedia/bilberry-hugo-theme.git
-[submodule "public"]
-	path = public
-	url = git@github.com:taskmedia/taskmedia.github.io.git
-	branch = master
