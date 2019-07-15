@@ -5,4 +5,10 @@ theme = "bilberry-hugo-theme"
 publishDir = "public"
 
 [params]
-	github     = "https://github.com/taskmedia"
+	gravatarEMail = "mail@task.media"
+
+	github = "https://github.com/taskmedia"
+
+	copyrightBy = "task.media"
+	copyrightUseCurrentYear = true
+	copyrightUrl = "https://task.media"
