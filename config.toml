@@ -1,4 +1,5 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseURL = "https://blog.task.media/"
+languageCode = "de-DE"
+title = "task.media Blog"
 theme = "bilberry-hugo-theme"
+publishDir = "docs"
