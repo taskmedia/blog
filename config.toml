@@ -3,3 +3,6 @@ languageCode = "de-DE"
 title = "task.media Blog"
 theme = "bilberry-hugo-theme"
 publishDir = "public"
+
+[params]
+	github     = "https://github.com/taskmedia"
