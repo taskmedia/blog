@@ -1,0 +1,47 @@
+title: task.media Blog
+baseURL: https://blog.task.media/
+
+DefaultContentLanguage: de
+languageCode: de-DE
+
+theme: bilberry-hugo-theme
+publishDir: public
+
+params:
+  author: Marco
+  description: Blog über IT-Themen aus dem Alltag und Vorlesungen.
+  keywords: blog,it,taskmedia,task.media,it-archiv,itarchiv
+
+  dateFormat: 2 January 2006
+  showReadingTime: true
+
+  pageinate: 6
+  
+  gravatarEMail: mail@task.media
+
+  resizeImages: true
+
+  showHeaderLanguageChooser: true
+
+  github: https://github.com/taskmedia
+  twitter: https://twitter.com/taskmediaDE
+
+  copyrightBy: task.media
+  copyrightUseCurrentYear: true
+  copyrightUrl: https://task.media/
+
+# don't change anything below
+taxonomies:
+  author: author
+  tag: tags
+  category: categories
+
+outputs:
+  home:
+    - HTML
+    - JSON
+    - RSS
+  page:
+    - HTML
+
+
