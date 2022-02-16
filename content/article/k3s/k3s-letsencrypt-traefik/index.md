@@ -149,16 +149,16 @@ To verify if the changes are inherited have a look at the pods in namespace `kub
 ```bash
 $ kubectl get pod -n kube-system
 NAME                                      READY   STATUS      RESTARTS   AGE
-local-path-provisioner-84bb864455-hzk75   1/1     Running     0          12h
-coredns-96cc4f57d-cg59b                   1/1     Running     0          12h
-helm-install-traefik-crd--1-24p6k         0/1     Completed   0          12h
-metrics-server-ff9dbcb6c-bwcv2            1/1     Running     0          12h
-svclb-traefik-2qxsw                       2/2     Running     0          12h
-helm-install-traefik--1-pw4cs             0/1     Completed   1          2m4s
-traefik-968cf9598-6qxtm                   1/1     Running     0          2m1s
+local-path-provisioner-84bb864455-hzk75   1/1     Running     0          4m53s
+coredns-96cc4f57d-cg59b                   1/1     Running     0          4m53s
+helm-install-traefik-crd--1-24p6k         0/1     Completed   0          4m54s
+metrics-server-ff9dbcb6c-bwcv2            1/1     Running     0          4m53s
+svclb-traefik-2qxsw                       2/2     Running     0          4m33s
+helm-install-traefik--1-pw4cs             0/1     Completed   0          32s
+traefik-968cf9598-6qxtm                   1/1     Running     0          30s
 ```
 
-You can see the `helm-install-traefik-*` pod was completed 2 minutes ago.
+You can see the `helm-install-traefik-*` pod was completed 30 seconds ago.
 This pod deployed the changes from the added HelmChartConfig.
 
 This resulted in a updated `traefik-*` pod with updated configuration.
