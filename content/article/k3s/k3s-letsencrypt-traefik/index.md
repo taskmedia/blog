@@ -209,3 +209,30 @@ https://traefik.example.org/dashboard/
 As described in the yaml the certificate will not be trusted by your browser because currently the Let's Encrypt staging resolver is used.
 This occurs in a `Your connection is not private: ERR_CERT_AUTHORITY_INVALID` error on your browser.
 To change the certificate to a trusted on change the the resolver to `spec.tls.certResolver: le-prod`.
+
+# Known issues
+
+## Timeout during connect
+
+If a IngressRoute is already present when Traefik itself is not yet available the following error could occur:
+
+```bash
+$ kubectl logs  -n kube-system traefik-5c7b868c6-k4m2r
+time="2022-02-16T18:01:15Z" level=info msg="Configuration loaded from flags."
+time="2022-02-16T18:01:39Z" level=error msg="Unable to obtain ACME certificate for domains \"traefik.example.org\": unable to generate a certificate for the domains [traefik.example.org]: error: one or more domains had a problem:\n[traefik.example.org] acme: error: 400 :: urn:ietf:params:acme:error:connection :: Timeout during connect (likely firewall problem)\n" ACME CA="https://acme-staging-v02.api.letsencrypt.org/directory" routerName=hidden@kubernetescrd rule="Host(`traefik.example.org`)" providerName=le-staging.acme
+```
+
+If an Ingress(Route) is already defined prior to fully existence of the Traefik pod the HTTP challenge might will fail.
+This problem could occur due the fact that the old Traefik pod (shortly before its termination) will receive the response from service instead of the new pod.
+Due the fact that no response will return to the newly created pod will timeout.
+
+This issue is also related to the `certificate store` issue above.
+
+## Certificate store
+
+In the current configuration the certificate store (`/data/acme.json` inside the pod) will be lost if the pod will be recreated.
+All issued certificates will then be lost.
+
+The certificate store would have to be outsourced in e.g. a Kubernetes Secret.
+
+Have a look at [cert-manager](https://cert-manager.io/docs/) - this will also allow you to scale Traefik with multiple replicas.
