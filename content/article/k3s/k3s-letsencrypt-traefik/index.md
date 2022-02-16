@@ -4,7 +4,6 @@ date: 2022-02-16T12:00:00+01:00
 
 tags:
   [
-    "itarchiv",
     "k3s",
     "k8s",
     "kubernetes",
