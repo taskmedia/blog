@@ -101,12 +101,10 @@ spec:
       - "--api.insecure=true"
       - "--certificatesresolvers.le-staging.acme.tlschallenge"
       - "--certificatesresolvers.le-staging.acme.email=mail@task.media"
-      - "--certificatesresolvers.le-staging.acme.storage=acme.json"
       - "--certificatesresolvers.le-staging.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
       - "--certificatesresolvers.le-staging.acme.storage=/data/acme.json"
       - "--certificatesresolvers.le-prod.acme.tlschallenge"
       - "--certificatesresolvers.le-prod.acme.email=mail@task.media"
-      - "--certificatesresolvers.le-prod.acme.storage=acme.json"
       - "--certificatesresolvers.le-prod.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
       - "--certificatesresolvers.le-prod.acme.storage=/data/acme.json"
 
