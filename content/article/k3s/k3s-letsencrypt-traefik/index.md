@@ -27,11 +27,11 @@ But it will not have a certificate resolver present and uses the Traefik default
 
 # Versions
 
-K3s: `v1.22.6+k3s1 (3228d9cb)`
-K8s-Client: `1.23.3`
-K8s-Server: `1.22.6+k3s1`
-Traefik: `2.6.1`
-Traefik Helmchart: `10.9.100`
+- K3s: `v1.22.6+k3s1 (3228d9cb)`
+- K8s-Client: `1.23.3`
+- K8s-Server: `1.22.6+k3s1`
+- Traefik: `2.6.1`
+- Traefik Helmchart: `10.9.100`
 
 # Installation k3s
 
